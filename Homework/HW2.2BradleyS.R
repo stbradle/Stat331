@@ -17,8 +17,13 @@ states <- substring(text = place.vector, first = regexpr(",", place.vector) + 2)
 states.table <- table(states)
 
 #1d
-mexico <- grepl(pattern = "mexico", tolower(states)) | grepl("B.C., MX", states) | grepl("chihuahua", tolower(states))
-gulf <- grepl("off", tolower(states)) | grepl("gulf", tolower(states))
+mexico <- grepl(pattern = "mexico", tolower(states)) | 
+          grepl("B.C., MX", states) | 
+          grepl("chihuahua", tolower(states))
+
+gulf <- grepl("off", tolower(states)) |
+        grepl("gulf", tolower(states))
+
 canada <- grepl("canada", tolower(states))
 
 #1e
